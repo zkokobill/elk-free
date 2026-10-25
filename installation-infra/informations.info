@@ -1,0 +1,9 @@
+CREATION DE L'infrastructure pour alimentation
+
+Filebeat --->  Kafka ---> Logstash ----> Kibana
+
+Le code c'est du terraform pour installer l'infrastructure AWS.
+
+
+pour démarrer :
+terraform apply
