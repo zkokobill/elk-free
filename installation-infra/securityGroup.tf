@@ -165,3 +165,11 @@ resource "aws_vpc_security_group_egress_rule" "kibana_all_outbound_ipv4" {
   cidr_ipv4         = "0.0.0.0/0"
   ip_protocol       = "-1"
 }
+
+resource "aws_vpc_security_group_ingress_rule" "kibana_ssh_from_my_ip" {
+  security_group_id = aws_security_group.kibana-sg.id
+  cidr_ipv4         = var.my_ip
+  from_port         = 22
+  to_port           = 22
+  ip_protocol       = "tcp"
+}
